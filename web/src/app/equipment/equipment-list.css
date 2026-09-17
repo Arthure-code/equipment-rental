@@ -1,0 +1,6 @@
+/* Same frame as a real photo, so nothing moves when the cards arrive. */
+.placeholder-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}

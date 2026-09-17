@@ -1,1 +1,19 @@
-<h1 class="container py-4">Equipment Rental</h1>
+<header class="bg-dark text-white">
+  <nav class="container d-flex align-items-center justify-content-between py-3">
+    <a routerLink="/equipment" class="text-white text-decoration-none fs-4 fw-bold"
+      >Equipment Rental</a
+    >
+    <span class="text-white-50 small d-none d-md-inline"
+      >Earthmoving, planting and tillage machines by the day</span
+    >
+  </nav>
+</header>
+
+<main class="container my-4">
+  <router-outlet />
+</main>
+
+<footer class="container py-4 small text-secondary border-top">
+  Photos from <a href="https://unsplash.com/license" class="link-secondary">Unsplash</a>, linked by
+  URL.
+</footer>

@@ -1,0 +1,79 @@
+<div
+  class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3"
+>
+  <div>
+    <h1 class="h3 mb-1">Our fleet</h1>
+    <p class="text-secondary mb-0" data-testid="summary">
+      @if (loading()) {
+        Loading the fleet...
+      } @else {
+        {{ shown().length }} machines, {{ availableCount() }} available today
+      }
+    </p>
+  </div>
+  <div class="btn-group" role="group" aria-label="Category" data-testid="categories">
+    @for (name of categories(); track name) {
+      <button
+        type="button"
+        class="btn btn-sm"
+        [class.btn-dark]="category() === name"
+        [class.btn-outline-dark]="category() !== name"
+        [attr.aria-pressed]="category() === name"
+        (click)="category.set(name)"
+      >
+        {{ name }}
+      </button>
+    }
+  </div>
+</div>
+
+@if (message(); as note) {
+  <p
+    class="alert py-2"
+    [class.alert-secondary]="!note.error"
+    [class.alert-danger]="note.error"
+    role="status"
+    data-testid="message"
+  >
+    {{ note.text }}
+  </p>
+}
+
+<div class="row g-4">
+  @if (loading()) {
+    @for (slot of placeholders; track slot) {
+      <div class="col-12 col-md-6 col-xl-4" aria-hidden="true">
+        <div class="card h-100 border-secondary placeholder-glow">
+          <div class="placeholder-photo placeholder"></div>
+          <div class="card-body">
+            <p class="mb-2"><span class="placeholder col-3"></span></p>
+            <p class="h5"><span class="placeholder col-5"></span></p>
+            <p class="small">
+              <span class="placeholder col-12"></span>
+              <span class="placeholder col-8"></span>
+            </p>
+            <p class="fs-5"><span class="placeholder col-4"></span></p>
+            <p class="small"><span class="placeholder col-4"></span></p>
+            <p class="mb-0">
+              <span class="placeholder col-3 me-2 placeholder-lg"></span>
+              <span class="placeholder col-3 me-2 placeholder-lg"></span>
+              <span class="placeholder col-3 placeholder-lg"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    }
+  } @else {
+    @for (machine of shown(); track machine.id; let i = $index) {
+      <div class="col-12 col-md-6 col-xl-4">
+        <app-equipment-card
+          [equipment]="machine"
+          [busy]="busyId() === machine.id"
+          [priority]="i === 0"
+          (rent)="rent(machine, $event)"
+          (cancelRental)="cancel(machine)"
+        />
+      </div>
+    }
+  }
+</div>
