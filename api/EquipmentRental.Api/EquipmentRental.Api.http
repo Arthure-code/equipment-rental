@@ -1,0 +1,20 @@
+@host = http://localhost:5078
+
+### The fleet, with availability
+GET {{host}}/api/equipment
+Accept: application/json
+
+### One machine
+GET {{host}}/api/equipment/3
+Accept: application/json
+
+### Rent it for three days
+POST {{host}}/api/equipment/3/rentals
+Content-Type: application/json
+
+{
+  "days": 3
+}
+
+### Cancel the rental in progress
+DELETE {{host}}/api/equipment/3/rentals/current
