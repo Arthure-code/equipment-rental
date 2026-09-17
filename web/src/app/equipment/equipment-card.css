@@ -1,0 +1,13 @@
+/* Every photo takes the same frame, whatever its own proportions. */
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #e9ecef;
+}
+
+.photo-link:focus-visible {
+  outline: 2px solid #6c757d;
+  outline-offset: 2px;
+}

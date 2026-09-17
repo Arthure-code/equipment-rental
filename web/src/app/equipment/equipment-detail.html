@@ -1,0 +1,34 @@
+<p class="mb-3">
+  <a routerLink="/equipment" class="link-secondary">&larr; All machines</a>
+</p>
+
+@if (message(); as note) {
+  <p
+    class="alert py-2"
+    [class.alert-secondary]="!note.error"
+    [class.alert-danger]="note.error"
+    role="status"
+    data-testid="message"
+  >
+    {{ note.text }}
+  </p>
+}
+
+@if (machine(); as found) {
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <app-equipment-card
+        [equipment]="found"
+        [busy]="busy()"
+        (rent)="rent($event)"
+        (cancelRental)="cancel()"
+      />
+    </div>
+  </div>
+} @else if (missing()) {
+  <p class="alert alert-secondary" role="alert" data-testid="missing">
+    There is no machine with that number.
+  </p>
+} @else {
+  <p class="text-secondary" role="status">Loading...</p>
+}
