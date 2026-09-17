@@ -1,0 +1,22 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+*.log
+
+# .NET
+bin/
+obj/
+.vs/
+*.user
+TestResults/
+
+# Local database
+*.db
+*.db-shm
+*.db-wal
+
+# Editors and system
+.claude/
+.DS_Store
+Thumbs.db
