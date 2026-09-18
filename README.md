@@ -1,5 +1,14 @@
 # equipment-rental
 
+[![Build](https://github.com/Arthure-code/equipment-rental/actions/workflows/build.yml/badge.svg)](https://github.com/Arthure-code/equipment-rental/actions/workflows/build.yml)
+[![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Security rating](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Code smells](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+[![Duplicated lines](https://sonarcloud.io/api/project_badges/measure?project=Arthure-code_equipment-rental&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Arthure-code_equipment-rental)
+
 Which machines can go out today, for how long, and at what price? A
 rental counter for heavy equipment: eight machines, earthmoving,
 planting and tillage, each with its photo, its specifications and its
@@ -107,7 +116,9 @@ Sixteen Vitest tests through `TestBed`, as the Angular guides show: the
 service against `HttpTestingController`, the card with its inputs set
 and its outputs listened to, the list and the detail page with the
 service replaced by a stub. `npm run lint` runs angular-eslint on the
-TypeScript and the templates.
+TypeScript and the templates, `npm run coverage` writes the lcov report
+that the workflow, with the OpenCover report of `dotnet test`, hands to
+SonarCloud.
 
 ## Stack
 

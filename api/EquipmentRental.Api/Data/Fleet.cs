@@ -7,6 +7,7 @@ namespace EquipmentRental.Api.Data
     // the client picks the size it needs.
     public static class Fleet
     {
+        private const string Photos = "https://images.unsplash.com/";
         private const string Earthmoving = "Earthmoving";
         private const string Planting = "Planting";
         private const string Tillage = "Tillage";
@@ -40,7 +41,7 @@ namespace EquipmentRental.Api.Data
                 Category = category,
                 Description = description,
                 DailyRate = dailyRate,
-                ImageUrl = "https://images.unsplash.com/" + photo,
+                ImageUrl = Photos + photo,
             };
         }
     }
