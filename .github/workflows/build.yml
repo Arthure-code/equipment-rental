@@ -33,7 +33,7 @@ jobs:
           npm ci
           npm run lint
           npm run coverage
-          sed -i 's|^SF:|SF:web/|; s|\|/|g' coverage/equipment-rental/lcov.info
+          sed -i 's|^SF:|SF:web/|' coverage/equipment-rental/lcov.info
       - name: Begin the analysis
         run: >
           dotnet sonarscanner begin
