@@ -3,15 +3,14 @@
 </p>
 
 @if (message(); as note) {
-  <p
-    class="alert py-2"
+  <output
+    class="alert d-block py-2"
     [class.alert-secondary]="!note.error"
     [class.alert-danger]="note.error"
-    role="status"
     data-testid="message"
   >
     {{ note.text }}
-  </p>
+  </output>
 }
 
 @if (machine(); as found) {
@@ -30,5 +29,5 @@
     There is no machine with that number.
   </p>
 } @else {
-  <p class="text-secondary" role="status">Loading...</p>
+  <output class="text-secondary">Loading...</output>
 }

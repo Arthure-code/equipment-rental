@@ -11,7 +11,8 @@
       }
     </p>
   </div>
-  <div class="btn-group" role="group" aria-label="Category" data-testid="categories">
+  <fieldset class="btn-group" data-testid="categories">
+    <legend class="visually-hidden">Category</legend>
     @for (name of categories(); track name) {
       <button
         type="button"
@@ -24,19 +25,18 @@
         {{ name }}
       </button>
     }
-  </div>
+  </fieldset>
 </div>
 
 @if (message(); as note) {
-  <p
-    class="alert py-2"
+  <output
+    class="alert d-block py-2"
     [class.alert-secondary]="!note.error"
     [class.alert-danger]="note.error"
-    role="status"
     data-testid="message"
   >
     {{ note.text }}
-  </p>
+  </output>
 }
 
 <div class="row g-4">

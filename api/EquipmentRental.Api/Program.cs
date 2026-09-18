@@ -7,6 +7,9 @@ namespace EquipmentRental.Api
 {
     public class Program
     {
+        // Instantiated by the test host only, never by hand.
+        protected Program() { }
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
