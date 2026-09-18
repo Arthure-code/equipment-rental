@@ -20,3 +20,6 @@ TestResults/
 .claude/
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+coverage/
